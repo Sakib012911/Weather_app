@@ -11,8 +11,8 @@ app.use(express.static(path.join(__dirname,"public")))
 // Define the URL of the API
 
 
-app.get("/",async(req,res)=>{
-  const apiUrl = 'http://api.openweathermap.org/data/2.5/weather?q=pimpri&appid=Enter your api key';
+app.get("/",async(req,res)=>{                                                   
+  const apiUrl = 'http://api.openweathermap.org/data/2.5/weather?q=pimpri&appid=Enter your api key here';
   let data= await fetch(apiUrl);
   let parsdata= await data.json();
   res.render("home",{parsdata});
@@ -20,7 +20,7 @@ app.get("/",async(req,res)=>{
 
 app.post("/",async(req,res)=>{
     let {location}=req.body;
-    let api=`http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=Enter your api key`
+    let api=`http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=Enter your api key here`;
   let data= await fetch(api);
   let parsdata= await data.json();
   res.render("home",{parsdata});
